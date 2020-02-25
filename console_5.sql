@@ -14,6 +14,7 @@ SELECT  DAYNAME(NOW()),
         MONTHNAME(NOW()),
         EXTRACT(YEAR FROM NOW());
 
+USE sql_store;
 SELECT *
 FROM orders
 WHERE order_date >= '2019-01-01';
@@ -62,3 +63,12 @@ WHEN points >= 3000 THEN 'GOLD'
 END AS customer_type
 FROM customers
 ORDER BY first_name;
+
+USE sql_invoicing;
+DELETE
+FROM invoices
+WHERE invoice_id = 10;
+
+SELECT *
+FROM invoices;
+
